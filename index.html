@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biznesplan – Klucz do Sukcesu Przedsiębiorstwa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .presentation-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px; /* Increased max-width for better content display */
+            height: 80vh; /* Fixed height for consistent presentation */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Hide overflow for slides */
+            position: relative;
+        }
+        .slide-wrapper {
+            flex-grow: 1;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            min-width: 100%;
+            max-width: 100%;
+            flex-shrink: 0;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align content to start */
+            transition: transform 0.5s ease-in-out;
+            text-align: left;
+            overflow-y: auto; /* Enable scrolling for long slides */
+        }
+        .slide h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+        .slide h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+        }
+        .slide h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.6rem;
+        }
+        .slide p, .slide ul, .slide ol {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        .slide ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        .slide ol {
+            list-style-type: decimal;
+            padding-left: 25px;
+        }
+        .slide li {
+            margin-bottom: 0.4rem;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .nav-button {
+            background-color: #4299e1;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #3182ce;
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #a0aec0;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .slide-indicator {
+            text-align: center;
+            padding: 10px 0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        /* Table styling */
+        .slide table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        .slide th, .slide td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .slide th {
+            background-color: #edf2f7;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .slide tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        .slide tr:hover {
+            background-color: #ebf8ff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .presentation-container {
+                height: 90vh;
+                padding: 10px;
+            }
+            .slide {
+                padding: 20px;
+            }
+            .slide h1 {
+                font-size: 2rem;
+            }
+            .slide h2 {
+                font-size: 1.5rem;
+            }
+            .slide h3 {
+                font-size: 1.2rem;
+            }
+            .slide p, .slide ul, .slide ol {
+                font-size: 1rem;
+            }
+            .navigation-buttons {
+                padding: 15px 20px;
+            }
+            .nav-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-wrapper" id="slide-wrapper">
+            <div class="slide">
+                <h1 class="text-center w-full">Biznesplan – Klucz do Sukcesu Przedsiębiorstwa</h1>
+                <p class="text-center w-full text-xl text-gray-600 mt-4">Twój Kompas na Przedsiębiorczej Drodze</p>
+                <p class="text-center w-full text-lg text-gray-500 mt-8">Prezentacja dla początkujących przedsiębiorców</p>
+            </div>
+
+            <div class="slide">
+                <h2>Definicja Biznesplanu</h2>
+                <h3>Co to jest i dlaczego to Twoja mapa drogowa?</h3>
+                <ul>
+                    <li>Szczegółowy plan powstania i rozwoju firmy, wskazujący, jak dotrzeć do wyznaczonych celów.</li>
+                    <li>Kompleksowy harmonogram działań i strategii.</li>
+                    <li>Mapa potrzeb firmy i kierunkowskaz dla młodego przedsiębiorcy.</li>
+                    <li>Narzędzie do weryfikacji pomysłu i planowania działań.</li>
+                    <li>Pomaga określić oczekiwania, cele i konkretne działania.</li>
+                    <li>Służy jako wewnętrzny kompas i buduje zewnętrzną wiarygodność.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Niezbędność Biznesplanu</h2>
+                <h3>Dlaczego bez niego trudno o sukces?</h3>
+                <ul>
+                    <li><strong>Statystyki sukcesu:</strong>
+                        <ul>
+                            <li>71% szybko rozwijających się firm ma pisemne biznesplany.</li>
+                            <li>Zwiększa szanse na rozpoczęcie działalności o 260%.</li>
+                            <li>Firmy z planami rozwijają się o 85,19% szybciej.</li>
+                        </ul>
+                    </li>
+                    <li>Minimalizuje ryzyko niepowodzenia i umożliwia szybszą reakcję na problemy.</li>
+                    <li>Pozwala na identyfikację zagrożeń i przygotowanie planu awaryjnego.</li>
+                    <li>Pomaga określić przewagę nad konkurencją i zidentyfikować słabe strony.</li>
+                    <li>Przekształca intuicję w ustrukturyzowaną strategię.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cele Tworzenia Biznesplanu</h2>
+                <h3>Uporządkowanie i weryfikacja pomysłu: Od idei do konkretnego planu</h3>
+                <ul>
+                    <li>Zmusza do dogłębnej analizy koncepcji, zwiększając szanse na realizację.</li>
+                    <li>Pozwala określić oczekiwania, cele i zaplanować działania.</li>
+                    <li>Umożliwia zderzenie się z potencjalnymi możliwościami i zagrożeniami z wyprzedzeniem.</li>
+                    <li>Jest formą ustrukturyzowanej autorefleksji i narzędziem do walidacji pomysłu.</li>
+                    <li>Pomaga ocenić realny potencjał i zasadność podjęcia lub zaniechania działania.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cele Tworzenia Biznesplanu</h2>
+                <h3>Analiza opłacalności i minimalizacja ryzyka: Sprawdź, zanim zainwestujesz</h3>
+                <ul>
+                    <li>Ocena opłacalności oraz ryzyka planowanej inwestycji.</li>
+                    <li>Kluczowy etap przed podjęciem decyzji o realizacji przedsięwzięcia.</li>
+                    <li>Koszt opracowania biznesplanu jest niższy niż koszt uruchomienia biznesu.</li>
+                    <li>Pozwala na "symulację" przyszłej działalności i identyfikację problemów.</li>
+                    <li>Oszacowanie wartości kluczowych wskaźników finansowych (Próg Rentowności - BEP, Wartość Zaktualizowana Netto - NPV, Wewnętrzna Stopa Zwrotu - IRR).</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cele Tworzenia Biznesplanu</h2>
+                <h3>Pozyskiwanie finansowania: Jak przekonać inwestorów, banki i instytucje dotacyjne</h3>
+                <ul>
+                    <li>Narzędzie komunikacji misji, wizji i rozwoju firmy.</li>
+                    <li>Kluczowe narzędzie do pozyskiwania finansowania zewnętrznego (kredyty, dotacje, inwestycje).</li>
+                    <li>Wymóg wielu instytucji (banki, urzędy pracy, instytucje dotacyjne).</li>
+                    <li>Profesjonalny biznesplan to wizytówka firmy.</li>
+                    <li>Dopasowanie formy i szczegółowości do odbiorcy (pitch deck dla VC, tradycyjny dla banków).</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cele Tworzenia Biznesplanu</h2>
+                <h3>Narzędzie do zarządzania i monitorowania postępów: Biznesplan jako żywy dokument</h3>
+                <ul>
+                    <li>Pomaga skupić się na celach i dążyć do ich realizacji.</li>
+                    <li>Dobrze zaprojektowany harmonogram umożliwia weryfikację celów i szybką reakcję.</li>
+                    <li>Powinien być regularnie aktualizowany, odzwierciedlając aktualną sytuację.</li>
+                    <li>Pomaga w identyfikacji potencjalnych problemów i zagrożeń.</li>
+                    <li>Motywuje do dalszego rozwoju.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Streszczenie Wykonawcze (Executive Summary): Twoja wizytówka i zaproszenie do dalszej lektury</h3>
+                <ul>
+                    <li>Pierwsza część, ale pisana jako ostatnia.</li>
+                    <li>Podsumowuje wszystkie sekcje, dając ogólny obraz firmy.</li>
+                    <li>Klarowne, przystępne, zwięzłe (idealnie do 1 strony).</li>
+                    <li>Musi być przekonujące, aby zachęcić do dalszej lektury.</li>
+                    <li><strong>Zawiera:</strong> koncepcję, cele, produkt/usługę, rynek, strategię marketingową, finanse, potrzeby finansowe, zespół.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Opis Firmy i Produktu/Usługi: Co oferujesz i dlaczego to wyjątkowe?</h3>
+                <h4>Opis Firmy:</h4>
+                <ul>
+                    <li>Podstawowe dane rejestrowe, misja, wizja, PKD.</li>
+                    <li>Posiadany majątek i zasoby.</li>
+                    <li>Życiorysy właścicieli i kadry zarządzającej (wykształcenie, doświadczenie, umiejętności).</li>
+                </ul>
+                <h4>Opis Produktu/Usługi:</h4>
+                <ul>
+                    <li>Dokładny opis, istotne cechy wyróżniające (USP).</li>
+                    <li>Opis technologii, prawa autorskie, patenty.</li>
+                    <li>Plany unowocześniania produktu.</li>
+                    <li>Korzyści dla klienta, rozwiązywanie problemów.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Analiza Rynku i Konkurencji: Kto jest Twoim klientem i z kim rywalizujesz?</h3>
+                <h4>Analiza Rynku:</h4>
+                <ul>
+                    <li>Identyfikacja grupy docelowej i jej zachowań zakupowych.</li>
+                    <li>Trendy branżowe, sezonowość, chłonność rynku.</li>
+                    <li>Obecny stan rynku i przewidywane tendencje (dane GUS).</li>
+                </ul>
+                <h4>Analiza Konkurencji:</h4>
+                <ul>
+                    <li>Identyfikacja bezpośrednich i pośrednich konkurentów.</li>
+                    <li>Analiza ich mocnych i słabych stron.</li>
+                    <li>Wskazanie, co wyróżnia ofertę firmy i daje przewagę konkurencyjną.</li>
+                    <li>Nie twierdzić, że konkurencja nie istnieje!</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Plan Marketingowy: Jak dotrzesz do klientów i zbudujesz markę?</h3>
+                <ul>
+                    <li>Określa, jak firma będzie generować dochody.</li>
+                    <li>Oparty na koncepcji marketing mix (4P):
+                        <ul>
+                            <li><strong>Produkt:</strong> Jak cechy odpowiadają na potrzeby rynku.</li>
+                            <li><strong>Cena:</strong> Koszt jednostkowy, ceny konkurencji, marża, rabaty.</li>
+                            <li><strong>Dystrybucja:</strong> Kanały, partnerzy, formy płatności, usługi posprzedażowe.</li>
+                            <li><strong>Promocja i reklama:</strong> Formy, sposoby dotarcia, budżet, PR.</li>
+                        </ul>
+                    </li>
+                    <li>Kluczowy dla generowania sprzedaży i budowania marki.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Plan Operacyjny: Jak Twój biznes będzie działał na co dzień?</h3>
+                <ul>
+                    <li>Szczegółowo opisuje procesy i zasoby niezbędne do codziennego funkcjonowania.</li>
+                    <li>Zapewnia, że przedsiębiorca przemyślał praktyczne aspekty prowadzenia biznesu.</li>
+                    <li><strong>Zawiera informacje dotyczące:</strong>
+                        <ul>
+                            <li>Lokalizacji działalności.</li>
+                            <li>Dostawców surowców/usług.</li>
+                            <li>Personelu (struktura, płace, obowiązki).</li>
+                            <li>Niezbędnych narzędzi i technologii.</li>
+                            <li>Procesów operacyjnych (od pozyskania surowców do dostarczenia).</li>
+                            <li>Może zawierać harmonogram rzeczowo-finansowy.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Plan Finansowy: Liczby, które mówią o opłacalności i potrzebach</h3>
+                <ul>
+                    <li>Najtrudniejsza, ale najważniejsza część – potwierdza zyskowność.</li>
+                    <li>Przyciąga największą uwagę inwestorów.</li>
+                    <li><strong>Powinien zawierać:</strong>
+                        <ul>
+                            <li>Koszty uruchomienia przedsięwzięcia (inwestycji).</li>
+                            <li>Planowane przychody (prognozy).</li>
+                            <li>Analiza kosztów stałych i zmiennych.</li>
+                            <li>Źródła finansowania (wewnętrzne i zewnętrzne).</li>
+                            <li>Rachunek zysków i strat.</li>
+                            <li>Bilans.</li>
+                            <li>Rachunek przepływów pieniężnych (cash flow).</li>
+                            <li>Wskaźniki efektywności inwestycji (BEP, NPV, IRR).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Zespół Zarządzający: Kto stoi za sukcesem i jakie ma kompetencje?</h3>
+                <ul>
+                    <li>Kluczowe znaczenie – inwestorzy inwestują w ludzi.</li>
+                    <li>Buduje zaufanie i demonstruje zdolności wykonawcze.</li>
+                    <li><strong>Powinien zawierać:</strong>
+                        <ul>
+                            <li>Doświadczenie, kompetencje i kwalifikacje kluczowych pracowników.</li>
+                            <li>Życiorysy (CV) z historią zatrudnienia i osiągnięciami.</li>
+                            <li>Struktura organizacyjna, podział ról i obowiązków.</li>
+                            <li>Informacje o usługach zleconych firmom zewnętrznym.</li>
+                        </ul>
+                    </li>
+                    <li>Przekonaj inwestora o przygotowaniu zespołu.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Analiza SWOT: Poznaj swoje mocne i słabe strony, szanse i zagrożenia</h3>
+                <ul>
+                    <li>Klasyczne narzędzie strategiczne.</li>
+                    <li>Przedstawia wewnętrzne mocne (Strengths) i słabe (Weaknesses) strony.</li>
+                    <li>Przedstawia zewnętrzne szanse (Opportunities) i zagrożenia (Threats).</li>
+                    <li><strong>Mocne strony:</strong> atuty firmy (umiejętności, technologia, produkt, marka).</li>
+                    <li><strong>Słabe strony:</strong> mankamenty (brak personelu, kapitału, doświadczenia).</li>
+                    <li><strong>Szanse:</strong> czynniki zewnętrzne (rosnący rynek, nowe technologie, nisza).</li>
+                    <li><strong>Zagrożenia:</strong> czynniki zewnętrzne (konkurencja, zmiany preferencji, recesja).</li>
+                    <li>Podstawa dla strategicznej odporności i planowania awaryjnego.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Struktura Biznesplanu</h2>
+                <h3>Harmonogram Realizacji: Kiedy i co się wydarzy?</h3>
+                <ul>
+                    <li>Szczegółowy plan działań, przekształcający strategie w mierzalne kroki.</li>
+                    <li>Kluczowy element dla zarządzania projektem i śledzenia postępów.</li>
+                    <li><strong>Powinien zawierać:</strong>
+                        <ul>
+                            <li>Zaplanowane zadania.</li>
+                            <li>Daty rozpoczęcia i zakończenia.</li>
+                            <li>Przewidywany czas realizacji.</li>
+                            <li>Osoby odpowiedzialne.</li>
+                            <li>Punkty kontrolne (kamienie milowe).</li>
+                            <li>Sposoby weryfikacji realizacji zadań.</li>
+                        </ul>
+                    </li>
+                    <li>Pomaga trzymać się obranej drogi i szybko reagować na problemy.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cechy Dobrego Biznesplanu</h2>
+                <h3>Przejrzystość i konkretność: Mniej znaczy więcej</h3>
+                <ul>
+                    <li>Przede wszystkim przejrzysty, konkretny i zwięzły.</li>
+                    <li>Zawiera tylko najistotniejsze informacje i kluczowe dane.</li>
+                    <li>Unika zbędnego "lania wody" i ozdobników.</li>
+                    <li>Brak zbyt szczegółowych, technicznych opisów.</li>
+                    <li>Cały dokument możliwy do przeczytania w około godzinę.</li>
+                    <li>Klarowność odzwierciedla proces myślowy przedsiębiorcy.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cechy Dobrego Biznesplanu</h2>
+                <h3>Realizm i rzetelne dane: Fakty, nie marzenia</h3>
+                <ul>
+                    <li>Wiarygodność oparta na realnych danych i faktach z analizy rynku.</li>
+                    <li>Prognozy, zwłaszcza przychodów, powinny być realistyczne i ostrożne.</li>
+                    <li>Nie przesadzać z zawyżaniem przychodów ani zaniżaniem wydatków.</li>
+                    <li>Zaleca się nieznaczne zawyżenie kosztów i zaniżenie przychodów.</li>
+                    <li>Realizm to sygnał rozważnego zarządzania ryzykiem i wiarygodności.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cechy Dobrego Biznesplanu</h2>
+                <h3>Atrakcyjna forma i czytelność: Pierwsze wrażenie ma znaczenie</h3>
+                <ul>
+                    <li>Biznesplan to wizytówka firmy – staranne wykonanie jest kluczowe.</li>
+                    <li>Ważne, aby od pierwszego kontaktu wzbudzić zainteresowanie.</li>
+                    <li>Profesjonalnie wykonany, atrakcyjny, czytelny, bez literówek.</li>
+                    <li>Przejrzysty układ informacji.</li>
+                    <li>Użycie stonowanych kolorów, wykresów, rysunków, tabel i ilustracji.</li>
+                    <li>Prezentacja odzwierciedla profesjonalizm biznesowy.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Cechy Dobrego Biznesplanu</h2>
+                <h3>Świadomość zagrożeń: Bądź przygotowany na wyzwania</h3>
+                <ul>
+                    <li>Dobry biznesplan nie ukrywa potencjalnych zagrożeń.</li>
+                    <li>Otwarcie wymienia zagrożenia i wskazuje możliwe rozwiązania.</li>
+                    <li>Świadomość zagrożeń i wyzwań jest kluczowa dla wiarygodności i dojrzałości planu.</li>
+                    <li>Pokazuje, że przedsiębiorca realistycznie ocenia sytuację i jest przygotowany na trudności.</li>
+                    <li>Uznawanie zagrożeń za oznakę strategicznego przewidywania i przygotowania.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Najczęstsze Błędy przy Tworzeniu Biznesplanu</h2>
+                <h3>Przesadne prognozy i brak danych: Pułapki optymizmu</h3>
+                <ul>
+                    <li>Nadmierny optymizm w prognozach finansowych.</li>
+                    <li>Przecenianie prognoz przychodów i zaniżanie wydatków.</li>
+                    <li>Stawianie niezweryfikowanych hipotez opartych wyłącznie na wierze.</li>
+                    <li>Brak wiarygodnych argumentów (np. umów przedwstępnych z klientami).</li>
+                    <li>Nierealistyczne prognozy są objawem braku walidacji rynkowej.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Najczęstsze Błędy przy Tworzeniu Biznesplanu</h2>
+                <h3>Zbyt ogólnikowy opis: Brak precyzji szkodzi</h3>
+                <ul>
+                    <li>Biznesplan jest zbyt ogólnikowy i niejasny.</li>
+                    <li>Trudno określić, od czego zacząć i jak mierzyć sukces.</li>
+                    <li>Brak konkretnych szczegółów i liczb.</li>
+                    <li>Zbyt szczegółowe, techniczne opisywanie produktu, odciągające uwagę od korzyści.</li>
+                    <li>Niejasność jest wskaźnikiem nieprzygotowania i niezdolności do wykonania.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Najczęstsze Błędy przy Tworzeniu Biznesplanu</h2>
+                <h3>Nieuwzględnienie ryzyk: Ignorowanie zagrożeń</h3>
+                <ul>
+                    <li>Ignorowanie analizy SWOT z uwagi na "oczywiste" informacje.</li>
+                    <li>Niedostateczne analizy konkurencji (twierdzenie, że konkurencja nie istnieje).</li>
+                    <li>Nieprzygotowanie na potencjalne problemy i zagrożenia.</li>
+                    <li>Unikanie ryzyka jest często przejawem nadmiernej pewności siebie.</li>
+                    <li>Brak identyfikacji ryzyka pozostawia biznes podatny na wyzwania.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Najczęstsze Błędy przy Tworzeniu Biznesplanu</h2>
+                <h3>Brak staranności i niedostateczne analizy: Profesjonalizm to podstawa</h3>
+                <ul>
+                    <li>Brak profesjonalnego wykonania, nieatrakcyjna forma, literówki.</li>
+                    <li>Brak odpowiedniej struktury lub pominięcie oczekiwanych elementów.</li>
+                    <li>Niedostateczna znajomość branży, konkurencji czy rynku.</li>
+                    <li>Brak dokładnych badań, podważający wiarygodność.</li>
+                    <li>Brak profesjonalizmu jest barierą dla zaufania i inwestycji.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Podsumowanie i Praktyczne Wskazówki</h2>
+                <h3>Na co zwrócić uwagę podczas pisania: Kluczowe aspekty</h3>
+                <ul>
+                    <li>Rozpocznij od opisu firmy (misja, wizja, cele).</li>
+                    <li>Przeprowadź gruntowną analizę rynku i konkurencji.</li>
+                    <li>Precyzyjnie opisz produkty i usługi (USP, wartość dla klienta).</li>
+                    <li>Opracuj skuteczną strategię marketingową.</li>
+                    <li>Przeprowadź analizę SWOT.</li>
+                    <li>Stwórz rozwinięty i realistyczny plan finansowy.</li>
+                    <li>Podkreśl, co wyróżnia Twoją firmę.</li>
+                    <li>Określ cele SMART (Specyficzne, Mierzalne, Osiągalne, Realistyczne, Określone w czasie).</li>
+                    <li>Regularnie przeglądaj i aktualizuj biznesplan.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Podsumowanie i Praktyczne Wskazówki</h2>
+                <h3>Jak przygotować się do pisania: Proces krok po kroku</h3>
+                <ol>
+                    <li>Opracuj wizję i misję przedsiębiorstwa oraz definicję celów i strategii.</li>
+                    <li>Zbadaj rynek (grupę docelową, trendy, konkurencję).</li>
+                    <li>Zbierz ogólnodostępne dane (np. GUS).</li>
+                    <li>Bardzo szczegółowo zastanów się nad kosztami działalności.</li>
+                    <li>Przygotuj plan finansowy (inwestycje, sprzedaż, koszty, bilans, RZiS).</li>
+                    <li>Skonsultuj finalną treść z kimś bardziej doświadczonym lub ekspertem.</li>
+                </ol>
+                <p class="mt-4 text-sm text-gray-600">Faza przygotowawcza jest najbardziej czasochłonna i wartościowa.</p>
+            </div>
+
+            <div class="slide">
+                <h2>Podsumowanie i Praktyczne Wskazówki</h2>
+                <h3>Gdzie szukać wsparcia: Instytucje, programy i eksperci</h3>
+                <h4>Instytucje i programy rządowe/publiczne:</h4>
+                <ul>
+                    <li>Bank Gospodarstwa Krajowego (BGK) - "Pierwszy biznes - Wsparcie w starcie"</li>
+                    <li>Polska Agencja Inwestycji i Handlu (PAIH)</li>
+                    <li>Polska Agencja Rozwoju Przedsiębiorczości (PARP)</li>
+                    <li>Urzędy Pracy (PUP), Agencja Restrukturyzacji i Modernizacji Rolnictwa (ARiMR)</li>
+                    <li>Ministerstwo Funduszy i Polityki Regionalnej, Fundusze Regionalne</li>
+                </ul>
+                <h4>Organizacje prywatne/non-profit:</h4>
+                <ul>
+                    <li>Fundusze Poręczeń Kredytowych, Akademickie Inkubatory Przedsiębiorczości (AIP)</li>
+                    <li>Akceleratory, Sieć Aniołów Biznesu, Fundusze Venture Capital (VC)</li>
+                </ul>
+                <h4>Konsultacje z ekspertami i networking:</h4>
+                <ul>
+                    <li>Doradcy finansowi, księgowi, specjaliści od dotacji.</li>
+                    <li>Konferencje, warsztaty branżowe, platformy łączące startupy z inwestorami.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Konkluzje</h2>
+                <ul>
+                    <li>Biznesplan to strategiczne narzędzie i wewnętrzny kompas dla przedsiębiorcy.</li>
+                    <li>Przekształca intuicję w konkretne, mierzalne cele i strategie.</li>
+                    <li>Jest dynamicznym narzędziem zarządzania, wymagającym regularnych aktualizacji.</li>
+                    <li>Kluczowe jest podejście do tworzenia z maksymalną starannością i realizmem.</li>
+                    <li>Unikanie błędów (nadmierny optymizm, ogólnikowość, ignorowanie ryzyk) jest fundamentalne.</li>
+                    <li>Aktywne poszukiwanie i wykorzystywanie zewnętrznego wsparcia zwiększa szanse na sukces.</li>
+                    <li>Biznesplan to inwestycja w przyszłość firmy i narzędzie, które przekształca marzenia w realne przedsięwzięcia.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-button">Poprzedni</button>
+            <span id="slideIndicator" class="slide-indicator flex items-center justify-center">1 / 28</span>
+            <button id="nextBtn" class="nav-button">Następny</button>
+        </div>
+    </div>
+
+    <script>
+        const slideWrapper = document.getElementById('slide-wrapper');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideIndicator = document.getElementById('slideIndicator');
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Function to update slide visibility and navigation buttons
+        function updateSlide() {
+            slideWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            slideIndicator.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        // Event listener for next button
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        // Event listener for previous button
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        // Initial slide update on load
+        window.onload = updateSlide;
+    </script>
+</body>
+</html>
